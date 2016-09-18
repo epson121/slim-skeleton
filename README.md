@@ -1,22 +1,36 @@
-#Crypto-tracker
+#Slim skeleton
 
 ####About
 
-Tracking crypto purchases and sales easily.
+Skeleton application for projects using Slim PHP framework
 
-#### Features
-* track BTC and LTC purchases (transactions)
-* check current price of cryptocurrency
-* check your profits
-* play with price and amount
+#### Includes
+* Slim
+* monolog
+* php-view templating
+* flash messages
+* pdo connector
+* bootstrap, jQuery and jQuery UI
 
-Currently only BTC and LTC. 
-
-It's made for personal use, but feel free to use it. It comes
-with empty database, ready to use.
 
 ####Usage
 
 * clone
 * download composer dependencies
 * `php -S localhost:8080`
+* Made for use in personal projects, and it will hopefully be updated with time
+
+####Architecture
+
+* Each controller should extend Base controller
+  * Base controller provides gives you access to Helper class
+  * It injects flash messages and provides some helper methods
+* Custom models should extend Base model
+  * if working with database (Sqlite atm)
+  * Base provides helper methods to get data easier
+*  Templates use `fetch` method to include other templates
+  * `<?php echo $this->fetch('head.phtml'); ?>`
+
+
+####License 
+MIT
